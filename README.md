@@ -22,16 +22,35 @@
 
 ### 2.1. Árbol - ALV
 
-QuickSort
+alv
+
+```mermaid
+graph TB
+    A((3))-->B((4))
+    B-->E((5))
+    B-->F((6))
+    C-->G((7))
+    C-->H((8))
+    E-->I((9))
+    E-->J((10))    
+    F-->D((4))
+    F-->K((5))
+```
 
 ### 2.2. Árbol B-Tree
 
-And this will produce a flow chart:
+b-tree
 
 ```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
+graph TB
+    A((3))-->B((4))
+    B-->E((5))
+    B-->F((6))
+    C-->G((7))
+    C-->H((8))
+    E-->I((9))
+    E-->J((10))    
+    F-->D((4))
+    F-->K((5))
+``` D
 ```
