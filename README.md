@@ -3,7 +3,7 @@
 ### Universidad Nacional de San Agustín <br/> Maestría en Ciencia de la Computación <br/>  Algoritmos y Estructura de Datos
 <hr/>
 
-# Practica 01
+# Practica 02
 
 | DOCENTE | CARRERA | CURSO |
 | :-: | :-: | :-: |
@@ -13,7 +13,6 @@
 | PRÁCTICA | TEMA | DURACIÓN |
 | :-: | :-: | :-: |
 | 02 | Algoritmos de búsqueda | 3 horas
-
 
 ## 1. Alumno
 - Paredes Rodriguez, Raybert
