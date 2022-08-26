@@ -1,39 +1,89 @@
-
 <!DOCTYPE html>
 <html>
-	<head>
-		
-		<title>
-			Visualizacion arboles
-		</title>
-		
-		<link rel="stylesheet" href="styles/visualizationPageStyle.css">
-		
-	 </head> 
-	
-	<body>
-		
+
+<head>
+
+	<title>
+		Visualizacion arboles
+	</title>
+
+	<link rel="stylesheet" href="styles/visualizationPageStyle.css">
+
+	<style>
+		.grid-container {
+			display: grid;
+			grid-template-columns: auto auto auto;
+			/* gap: 10px; */
+			padding: 10px;
+		}
+
+		.grid-container>div {
+			text-align: center;
+			padding: 10px 0;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="grid-container">
+		<div class="grid-item" style="vertical-align: middle;">
+			<img id="logoUnsa" src="img/logo_unsa.jpg" width="200" alt="UNSA">
+		</div>
+		<div class="grid-item">
+			<p style="font-size: 18px;font-weight: bold;">
+				Universidad Nacional de San Agust&iacute;n<br />
+				Maestr&iacute;a en Ciencia de la Computaci&oacute;n<br />
+				Algoritmos y Estructura de Datos<br />
+			</p>
+		</div>
+		<div class="grid-item">&nbsp;</div>
+		<div class="grid-item">&nbsp;</div>
+		<div class="grid-item">
+			<h2>Pr&aacute;ctica 02 </h2><br />
+			Estructuras AVL y B-Tree
+		</div>
+		<div class="grid-item">&nbsp;</div>
+		<div class="grid-item">&nbsp;</div>
+		<div class="grid-item">
+			<h2>Estudiante:</h2><br />
+			Raybert Paredes Rodriguez<br />
+		</div>
+		<div class="grid-item">&nbsp;</div>
+		<div class="grid-item">&nbsp;</div>
+		<div class="grid-item">Botones</div>
+		<div class="grid-item">&nbsp;</div>
+	</div>
+
 		<div id="container">
 			<div>
-                <img id="logoUnsa" src="img/logo_unsa.jpg" width="200" alt="UNSA" >
-            </div>
-			<div id="header">  
-				<h1>Arbol de b&uacute;squeda - AVL</h1>
+
 			</div>
-			
-			<div id="mainContent"> 
-				
+			<div style="text-align: center;">
+				<table>
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+
+
+			</div>
+
+			<div id="mainContent">
+
 				<div id="algoControlSection" class="controlSection">
-					<table id="AlgorithmSpecificControls" class="tableButtons"> </table> 
+					<table id="AlgorithmSpecificControls" class="tableButtons"> </table>
 				</div>
-				
+
 				<canvas id="canvas" width="1000" height="500"></canvas>
 
 				<div id="generalAnimationControlSection" style="display: none;">
-					<table id="GeneralAnimationControls">  </table>		
-				</div> 
-				
+					<table id="GeneralAnimationControls"> </table>
+				</div>
+
 			</div> <!-- mainContent -->
 		</div><!-- container -->
-	</body>
+</body>
+
 </html>
