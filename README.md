@@ -14,7 +14,10 @@
 | :-: | :-: | :-: |
 | 02 | Algoritmos de búsqueda | 3 horas
 
-## 1. Alumno
+## 1. Datos de los estudiantes
+- Asmat Fuentes, Franz Rogger
+- Esthela Espinoza, Fausto Danilo
+- Ojeda Mamani, Abel Eberth
 - Paredes Rodriguez, Raybert
 
 ## 2. Ejercicios
