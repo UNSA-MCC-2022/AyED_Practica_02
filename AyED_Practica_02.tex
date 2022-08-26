@@ -1,0 +1,271 @@
+%package list
+\documentclass{article}
+\usepackage[top=2cm, bottom=2cm, outer=2cm, inner=2cm]{geometry}
+\usepackage{graphicx}
+%\usepackage{url}
+\usepackage{hyperref}
+\usepackage{array}
+%\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+%\usepackage{natbib}
+%\usepackage{pdfpages}
+%\usepackage{multirow}
+%\usepackage{float}
+%\usepackage[normalem]{ulem}
+%\useunder{\uline}{\ul}{}
+\usepackage[english,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{tikz-qtree}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,bending}
+\tikzset{every tree node/.style={minimum width=2.5em,draw,circle},
+     blank/.style={draw=none},
+     edge from parent/.style=
+     {draw, edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
+     level distance=1.5cm}
+
+\usetikzlibrary{shapes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\csemail}{vmachacaa@unsa.edu.pe}
+\newcommand{\csdocente}{Vicente Machaca Arceda}
+\newcommand{\cscurso}{Algoritmos y Estructura de Datos}
+\newcommand{\csuniversidad}{Universidad Nacional de San Agustín}
+\newcommand{\csescuela}{Maestría en Ciencia de la Computación}
+\newcommand{\cspracnr}{02}
+\newcommand{\cstema}{Algoritmos AVL y B-Tree}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla}
+\AtBeginDocument{%
+	\renewcommand\tablename{Tabla}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_unsa}}}
+\fancyhead[C]{}
+\fancyhead[R]{\fontsize{7}{7}\selectfont	\csuniversidad \\ \csescuela \\ \textbf{\cscurso} }
+\fancyfoot[L]{MSc. Vicente Machaca}
+\fancyfoot[C]{\cscurso}
+\fancyfoot[R]{Página \thepage}
+
+
+
+\begin{document}
+	
+	\vspace*{10px}
+	
+	\begin{center}	
+		\fontsize{17}{17} \textbf{ Práctica \cspracnr}
+	\end{center}
+
+	\begin{table}[h]
+		\begin{tabular}{|x{5.4cm}|x{5.4cm}|x{5.4cm}|}
+			\hline 
+			\textbf{DOCENTE} & \textbf{CARRERA}  & \textbf{CURSO}   \\
+			\hline 
+			\csdocente & \csescuela & \cscurso    \\
+			\hline 
+		\end{tabular}
+	\end{table}	
+	
+	\begin{table}[h]
+		\begin{tabular}{|x{5.4cm}|x{5.4cm}|x{5.4cm}|}
+			\hline 
+			\textbf{PRÁCTICA} & \textbf{TEMA}  & \textbf{DURACIÓN}   \\
+			\hline 
+			\cspracnr & \cstema & 3 horas   \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\section{Datos de los estudiantes}
+	\begin{enumerate}
+		\item \textbf{Grupo:} 09
+		\item \textbf{Integrantes:}
+		\begin{itemize}
+			\item Asmat Fuentes, Franz Rogger
+			\item Esthela Espinoza, Fausto Danilo
+			\item Ojeda Mamani, Abel Eberth
+			\item Paredes Rodriguez, Raybert
+		\end{itemize}		
+	\end{enumerate}
+	
+	\section{Ejercicios}\label{sec:ejercicios}
+	\begin{enumerate}
+	
+        %\begin{enumerate}
+        \item \textbf{Árbol AVL}
+            
+            AVL Tree es una estructura de datos de árbol binario autoequilibrado. Tiene tiempos de inserción, eliminación y búsqueda muy eficientes. En cuanto a la profundidad de un árbol AVL en ambos lados, difiere como máximo en 1 nivel. En cualquier otro momento en el que la diferencia de altura/profundidad sea superior a 1 o inferior a -1, se produce un reequilibrio. En términos de espacio tiene una complejidad O(n). Con la complejidad del tiempo, tiene O (log n) para todos los casos (peor, promedio, mejor). Comparando esto con el árbol rojo-negro comúnmente conocido, el árbol AVL está más rígidamente equilibrado que el árbol RB, por lo tanto, aunque tiene tiempos de recuperación rápidos, el árbol RB es más eficiente en los tiempos de inserción y eliminación. No obstante, ambos tienen un tiempo de ejecución de O(log n) y se equilibran automáticamente. El nombre AVL proviene de los creadores de este algoritmo (Adelson-Velskii y Landis).\par
+		    \vspace{5mm}
+		    Los árboles de búsqueda binarios están organizados de la siguiente forma:\par
+		    \vspace{5mm}
+
+            \begin{center}
+                Nodo BST: Clave = k* \\[\baselineskip]
+                ${ k \leq k*   k* \leq k}$
+            \end{center}
+
+            Al trabajar con árboles AVL, las operaciones deben preservar dos propiedades:
+
+            \begin{itemize}
+                \item \textbf{Altura balanceada: } Las alturas de los subárboles izquierdo y derecho están dentro de 1
+                \item \textbf{BST: } Los valores en el subárbol izquierdo son más pequeños que el valor raíz, que es más pequeño que los valores en el subárbol derecho.
+            \end{itemize}
+            \vspace{5mm}
+            
+            Cuando se agrega un nuevo valor en el árbol al que pertenece, se debe comprobar si todos los sub-árboles todavía están equilibrados en altura. Si no lo estan, debe volver a equilibrar el árbol cambiando su forma (es decir, moviéndose alrededor de los nodos o incluso subárboles completos).\par
+            \vspace{5mm}
+            \textbf{Ejemplo:}
+            \vspace{5mm}
+            
+            \begin{itemize}
+                \item Insertar (3):
+            
+                \begin{center}
+                \begin{tikzpicture}
+                  [level distance=10mm,
+                   every node/.style={circle,draw,inner sep=2mm},
+                   level 1/.style={sibling distance=25mm},
+                   level 2/.style={sibling distance=15mm},
+                   level 3/.style={sibling distance=15mm}]
+                  \node {3};
+                \end{tikzpicture}
+                \end{center}
+            
+                \item Insertar (6):
+                
+                \begin{center}
+                \begin{tikzpicture}
+                  [level distance=10mm,
+                   every node/.style={circle,draw,inner sep=2mm},
+                   level 1/.style={sibling distance=25mm},
+                   level 2/.style={sibling distance=15mm},
+                   level 3/.style={sibling distance=15mm}]
+                  \node {3} 
+                        child [ missing ]
+                        child { node {6} };
+                \end{tikzpicture}
+                \end{center}
+                
+                \item Insertar (2):
+
+                \begin{center}
+                \begin{tikzpicture}
+                  [level distance=10mm,
+                   every node/.style={circle,draw,inner sep=2mm},
+                   level 1/.style={sibling distance=25mm},
+                   level 2/.style={sibling distance=15mm},
+                   level 3/.style={sibling distance=15mm}]
+                  \node {3} 
+                        child { node {2} }
+                        child { node {6} };
+                \end{tikzpicture}
+                \end{center}
+
+                \item Insertar (1):
+
+                \begin{center}
+                \begin{tikzpicture}
+                  [level distance=10mm,
+                   every node/.style={circle,draw,inner sep=2mm},
+                   level 1/.style={sibling distance=25mm},
+                   level 2/.style={sibling distance=15mm},
+                   level 3/.style={sibling distance=15mm}]
+                  \node {3} 
+                        child { node {2} 
+                            child { node {1} }
+                            child [ missing ]  
+                        }
+                        child { node {6} };
+                \end{tikzpicture}
+                \end{center}
+            
+            
+            \end{itemize}
+            
+        
+        \item \textbf{B-Tree}
+        
+        Un B-Tree es un árbol autoequilibrado que mantiene datos ordenados y permite búsquedas, inserciones y eliminaciones en tiempo logarítmico.\par
+
+        Están diseñados para funcionar bien cuando se almacenan en un almacenamiento secundario, como un disco duro. El tamaño de un nodo es normalmente del mismo tamaño que el tamaño del bloque/página del sistema.\par
+        
+        
+            \begin{center}
+                \begin{tikzpicture}
+                \tikzstyle{bplus}=[rectangle split, rectangle split horizontal,rectangle split ignore empty parts,draw]
+                \tikzstyle{every node}=[bplus]
+                \tikzstyle{level 1}=[sibling distance=60mm]
+                \tikzstyle{level 2}=[sibling distance=15mm]
+                \node {15} 
+                  child {node {3 \nodepart{two} 7}
+                    child {node {1 \nodepart{two} 2}}
+                    child {node {4 \nodepart{two} 6}}
+                    child {node {8 \nodepart{two} 9}}    
+                  }
+                  child {node {21 \nodepart{two} 28 \nodepart{three} 32 \nodepart{four} 50}
+                    child {node {17 \nodepart{two} 20}}
+                    child {node {22 \nodepart{two} 25}}
+                    child {node {28 \nodepart{two} 30}}    
+                    child[sibling distance=25mm] {node {34 \nodepart{two} 38 \nodepart{three} 44 \nodepart{four} 47}}    
+                    child[sibling distance=25mm] {node {53 \nodepart{two} 54 \nodepart{three} 60 \nodepart{four} 88}}
+                  };
+                \end{tikzpicture}
+            \end{center}
+        
+        \vspace{5mm}
+        
+        \begin{itemize}
+            \item \textbf{Búsqueda: } Requiere atravesar cada nivel del árbol hasta encontrar la clave. Es similar al algoritmo de búsqueda binaria, excepto que se usa una búsqueda de rango para identificar al niño correcto para visitar.
+            
+            \item \textbf{Insertar: } Los valores en el subárbol izquierdo son más pequeños que el valor raíz, que es más pequeño que los valores en el subárbol derecho.
+            La inserción implica buscar la nueva posición de la hoja e insertar la nueva clave en orden ordenado. En el caso de que el nodo hoja esté lleno, el nodo debe dividirse.
+            Dividir implica crear dos nodos a partir del nodo completo las llaves de s, divididas alrededor de la clave de la mediana para tener llaves cada uno. El nodo mediano se mueve padre de para identificar el punto de división entre los dos nuevos árboles.
+            Para evitar la división recursiva de nodos hasta la raíz, puede dividir nodos completos de manera preventiva mientras recorre el árbol.
+            
+            \item \textbf{Eliminar: }Hay dos estrategias populares de eliminación de árboles B:
+            
+            1. Localice y elimine el elemento (a la find()), luego reestructure el árbol para conservar sus invariantes.
+            2. Realice una sola pasada por el árbol, pero antes de visitar un nodo, reestructure el árbol para que, una vez que se encuentre la clave que se va a eliminar, se pueda eliminar sin desencadenar la necesidad de una reestructuración adicional.
+            Mantener las invariantes del árbol B al eliminar implica mover las claves de los nodos hermanos que tienen
+            
+        \end{itemize}
+        \vspace{5mm}
+
+    \end{enumerate}
+    
+    \section{Repositorio}\label{sec:codigo}
+        La implementación de los algoritmos y los datos utilizados es el siguiente:\par
+	    \par
+	    \begin{center}
+	        \url{https://github.com/UNSA-MCC-2022/AyED_Practica_02}
+	    \end{center}
+
+    \section{Representación gráfica}\label{sec:representacion}
+        Se realizó la implementación de la representación gráfica de los algoritmos indicados, esto se pueden visualizar en el siguiente enlace:\par
+	    \par
+	    \begin{center}
+	        \url{https://unsa-mcc-2022.github.io/AyED_Practica_02}
+	    \end{center}
+	
+	%\clearpage
+	%\bibliographystyle{apalike}
+	%\bibliographystyle{IEEEtranN}
+	%\bibliography{bibliography}
+		
+	
+\end{document}
