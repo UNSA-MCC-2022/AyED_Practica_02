@@ -13,13 +13,25 @@
 		.grid-container {
 			display: grid;
 			grid-template-columns: auto auto auto;
-			/* gap: 10px; */
 			padding: 10px;
 		}
 
 		.grid-container>div {
 			text-align: center;
 			padding: 10px 0;
+		}
+
+		.btn_link {
+			color: white;
+			font-size: 16px;
+			background: #3498db;
+			padding: 10px 10px 10px 10px;
+			text-decoration: none;
+		}
+
+		.btn_link:hover {
+			background: #3cb0fd;
+			text-decoration: none;
 		}
 	</style>
 
@@ -52,38 +64,16 @@
 		</div>
 		<div class="grid-item">&nbsp;</div>
 		<div class="grid-item">&nbsp;</div>
-		<div class="grid-item">Botones</div>
+		<div class="grid-item">
+			<br />
+			<a class="btn_link" href="avl_tree.html">ALV</a>
+			<br />
+			<br />
+			<br />
+			<a class="btn_link" href="b_tree.html">B-Tree</a>
+		</div>
 		<div class="grid-item">&nbsp;</div>
 	</div>
-
-		<div id="container">
-			<div>
-
-			</div>
-			<div style="text-align: center;">
-				<table>
-					<tr>
-						<td></td>
-					</tr>
-				</table>
-
-
-			</div>
-
-			<div id="mainContent">
-
-				<div id="algoControlSection" class="controlSection">
-					<table id="AlgorithmSpecificControls" class="tableButtons"> </table>
-				</div>
-
-				<canvas id="canvas" width="1000" height="500"></canvas>
-
-				<div id="generalAnimationControlSection" style="display: none;">
-					<table id="GeneralAnimationControls"> </table>
-				</div>
-
-			</div> <!-- mainContent -->
-		</div><!-- container -->
 </body>
 
 </html>
