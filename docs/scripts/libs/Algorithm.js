@@ -216,6 +216,7 @@ Algorithm.prototype.normalizeNumber = function(input, maxLen)
 	else
 	{
 		// return ("OOO0000" +input).substr(-maxLen, maxLen);
+		// return ("00" +input).substr(-maxLen, maxLen);
 		return input;
 	}
 }
