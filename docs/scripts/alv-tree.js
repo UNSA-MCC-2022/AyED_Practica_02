@@ -255,6 +255,7 @@ alv_tree.prototype.doFind = function(tree, value)
 alv_tree.prototype.insertElement = function(insertedValue)
 {
 	this.commands = [];	
+	insertedValue = parseInt(insertedValue);
 	this.cmd(CMD_SET_TEXT, 0, " Insertando " + insertedValue);
 	
 	if (this.treeRoot == null)
