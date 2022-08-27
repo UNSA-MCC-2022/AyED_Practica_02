@@ -25,7 +25,7 @@
 ### 2.1. Árbol - AVL
 
 AVL Tree es una estructura de datos de árbol binario autoequilibrado. Tiene tiempos de inserción, eliminación
-y búsqueda muy eficientes. En cuanto a la profundidad de un ´arbol AVL en ambos lados, difiere como máximo
+y búsqueda muy eficientes. En cuanto a la profundidad de un árbol AVL en ambos lados, difiere como máximo
 en 1 nivel. En cualquier otro momento en el que la diferencia de altura/profundidad sea superior a 1 o inferior
 a -1, se produce un reequilibrio. En términos de espacio tiene una complejidad O(n). Con la complejidad del
 tiempo, tiene O (log n) para todos los casos (peor, promedio, mejor). Comparando esto con el árbol rojo-negro
@@ -33,7 +33,7 @@ comúnmente conocido, el árbol AVL está más rígidamente equilibrado que el �
 tiene tiempos de recuperación rápidos, el árbol RB es más eficiente en los tiempos de inserción y eliminación.
 No obstante, ambos tienen un tiempo de ejecución de O(log n) y se equilibran automáticamente. El nombre
 AVL proviene de los creadores de este algoritmo (Adelson-Velskii y Landis).
-Los árboles de búsqueda binarios est´an organizados de la siguiente forma:
+Los árboles de búsqueda binarios están organizados de la siguiente forma:
 
     Nodo BST: Clave = k*
     k ≤ k ∗ k∗ ≤ k
