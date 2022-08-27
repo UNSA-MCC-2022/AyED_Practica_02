@@ -22,7 +22,7 @@
 
 ## 2. Ejercicios
 
-### 2.1. Árbol - ALV
+### 2.1. Árbol - AVL
 
 AVL Tree es una estructura de datos de árbol binario autoequilibrado. Tiene tiempos de inserción, eliminación
 y búsqueda muy eficientes. En cuanto a la profundidad de un ´arbol AVL en ambos lados, difiere como máximo
