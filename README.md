@@ -115,7 +115,7 @@ La implementación de los algoritmos y los datos utilizados es el siguiente:
 
 https://github.com/UNSA-MCC-2022/AyED_Practica_02
 
-## 3. Representación gráfica}
+## 3. Representación gráfica
 
 Se realizó la implementación de la representación gráfica de los algoritmos indicados, esto se pueden visualizar en el siguiente enlace:
 
